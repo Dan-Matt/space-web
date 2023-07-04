@@ -1,5 +1,5 @@
 import React from 'react';
-import { Planet } from '../models/planet';
+import { Planet } from '../Models/Planet';
 
 export interface PlanetCardProps {
     planet: Planet;

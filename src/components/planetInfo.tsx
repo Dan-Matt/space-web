@@ -1,5 +1,5 @@
-import { Planet } from '../models/planet';
-import { ToPowerOf10 } from '../utilities/mathUtilities';
+import { Planet } from '../Models/Planet';
+import { ToPowerOf10 } from '../Utilities/MathUtilities';
 
 export interface PlanetInfoProps {
     planet: Planet;

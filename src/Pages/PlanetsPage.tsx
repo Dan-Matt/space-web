@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import PlanetButton from '../components/planetButton';
-import './planets.css';
-import { Planet } from '../models/planet';
-import { ToPowerOf10 } from '../utilities/mathUtilities';
-import PlanetInfo from '../components/planetInfo';
+import PlanetButton from '../Components/PlanetButton';
+import './planetsPage.css';
+import { Planet } from '../Models/Planet';
+import { ToPowerOf10 } from '../Utilities/MathUtilities';
+import PlanetInfo from '../Components/PlanetInfo';
 import config from '../config.json';
 
-function Planets() {
+function PlanetsPage() {
     const [planets, setPlanets] = useState<Planet[]>([]);
     const [selectedPlanet, setSelectedPlanet] = useState<Planet>();
 
@@ -58,4 +58,4 @@ function Planets() {
         </div>)
 };
 
-export default Planets;
+export default PlanetsPage;

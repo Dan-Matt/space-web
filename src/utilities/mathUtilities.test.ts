@@ -1,4 +1,4 @@
-import { ToPowerOf10 } from "./mathUtilities";
+import { ToPowerOf10 } from "./MathUtilities";
 
 test.each([
     [1, 1, 10],

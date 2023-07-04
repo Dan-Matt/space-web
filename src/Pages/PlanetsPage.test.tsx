@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
 import * as React from 'react';
 import { render, fireEvent, screen, cleanup, waitFor } from '@testing-library/react';
-import Planets from './planets';
+import PlanetsPage from './PlanetsPage';
 import axios from 'axios';
-import { mockPlanets } from '../models/mocks/planetMocks';
+import { mockPlanets } from '../Models/Mocks/PlanetMocks';
 
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -13,7 +13,7 @@ afterEach(cleanup);
 test('shows title, planet buttons and first planet info', async () => {
     mockedAxios.get.mockResolvedValue({ data: mockPlanets });
 
-    render(<Planets />);
+    render(<PlanetsPage />);
 
     expect(screen.getByText('Planets in Our Solar System')).toBeInTheDocument();
 
@@ -34,7 +34,7 @@ test('shows title, planet buttons and first planet info', async () => {
 test('shows selected planet info', async () => {
     mockedAxios.get.mockResolvedValue({ data: mockPlanets });
 
-    render(<Planets />);
+    render(<PlanetsPage />);
 
     await screen.findByText(mockPlanets[1].name);
     fireEvent.click(screen.getByText(mockPlanets[1].name));
