@@ -26,7 +26,7 @@ function Planets() {
     }, []);
 
     useEffect(() => {
-        setSelectedPlanet(planets.filter(x => x.name == 'Earth')[0])
+        setSelectedPlanet(planets[0])
     }, [planets]);
 
     const onPlanetClick = function (planet: Planet) {
@@ -44,9 +44,8 @@ function Planets() {
             <div className='container'>
                 <div className='row'>
                     {planetsOrdered.map(x =>
-                        <div className='col' onClick={() => onPlanetClick(x)}>
+                        <div key={x.name} className='col' onClick={() => onPlanetClick(x)}>
                             <PlanetButton
-                                key={x.name}
                                 planet={x}
                                 selected={selectedPlanet?.name == x.name} />
                         </div>

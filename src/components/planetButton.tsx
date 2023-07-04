@@ -11,7 +11,7 @@ function PlanetButton({ planet, selected }: PlanetCardProps) {
         <div className={selected ? 'border-bottom' : ''}>
             <img
                 src={planet.imageUrl}
-                alt={planet.name + 'image'}
+                alt={planet.name + ' Image'}
                 className='img-fluid' />
             <h3 className={'text-center ' + (selected ? '' : 'text-secondary')}>
                 {planet.name}
